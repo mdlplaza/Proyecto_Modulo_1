@@ -24,7 +24,11 @@
     </header>
     <main>
 
-     
+    <div>
+        <ul id="favorites"> 
+        
+        </ul>
+    </div>
 
 
     </main>
@@ -46,7 +50,21 @@
         </aside>
         <p class="text-detail">© 2020 FilmAffinity</p>
     </footer>
-    <script type="text/javascript" src="main.js"></script>   
+
+ <script> 
+
+    let favoriteFilms = JSON.parse(localStorage.getItem("favoriteFilms") || []);
+    console.log (favoriteFilms)
+    for (let i=0; i < favoriteFilms.length; i++) {
+        console.log("ENTRA??");
+        document.getElementById("favorites").innerHTML += `<li> ${favoriteFilms[i].name}</li>`
+    }
+
+
+
+
+    
+</script>
 </body>
 
 </html> 

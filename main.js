@@ -1,6 +1,7 @@
 
 
 let filmsContent= document.getElementById("films");
+let favoritedFilms = JSON.parse(localStorage.getItem("favoriteFilms")) || [];
 
 function myFunction(event) {
     let valueTosSearch = event.target.value;
@@ -20,19 +21,28 @@ function myFunction(event) {
                 <div class="films_description">
                     <h1>${datos.results[i].title}</h1>
                     <p>${datos.results[i].overview}</p>
-                    <button onclick="favoriteFilms(${datos.results[i].id})"><img src = "images/estrella.jpeg"/</button>
+                    <i class="${favoritedFilms.find(film => film.id === datos.results[i].id) ? "fas" : "far"} fa-star" onclick="favoriteFilms(${datos.results[i].id},'${datos.results[i].original_title}')"></i>
                 </div>
             </article>`;
             }
         })
 }
 
-function favoriteFilms(id) {
-    let favoriteFilms = JSON.parse(localStorage.getItem("favoriteFilms") || []);
-    console.log(favoriteFilms);
-    if (!favoriteFilms.includes(id)){
-        favoriteFilms.push(id);
+function favoriteFilms(id, name) {
+    if (!favoritedFilms.includes(id)){
+        favoritedFilms.push({"id": id, "name": name});
     }
-    localStorage.setItem("favoriteFilms", JSON.stringify(favoriteFilms));
+    localStorage.setItem("favoriteFilms", JSON.stringify(favoritedFilms));
 }
+
+function searchInFavorites(id) {
+    for(let i=0; i< favoritedFilms.length; i++) {
+        if (favoritedFilms[i].id === id) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 
