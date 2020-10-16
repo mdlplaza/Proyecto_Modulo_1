@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
+    <title>Buscar</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="icon" href="images/claqueta.png" type="favicon.ico">
 </head>
 
 <body>
@@ -16,9 +17,9 @@
 
         <nav>
             <div class="links_header">
-                <a href="about_us.html">About Us</a>
-                <a href="search.html">Search</a>
-                <a href="favorites.html">Favorites</a>
+                <a href="about_us.html">Home</a>
+                <a href="search.html">Buscar</a>
+                <a href="favorites.html">Favoritos</a>
             </div>
         </nav>
     </header>
@@ -26,7 +27,7 @@
       
 
         <div class="search">
-            <input type= "text" onkeyup="myFunction(event)" id="search" placeholder="Buscar una película, pograma de televisión, persona..." />
+            <input type= "text" onkeyup="searchMovies(event)" id="search" placeholder="Buscar una película, pograma de televisión, persona..." />
         </div>
 
         <div class="films" id="films">
@@ -54,7 +55,7 @@
     </footer>
 
 
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="search.js"></script>
 </body>
 
 </html>

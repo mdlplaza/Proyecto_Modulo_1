@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favorites</title>
+    <title>Favoritos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="icon" href="images/claqueta.png" type="favicon.ico">
+
 </head>
 
 <body>
@@ -16,18 +19,21 @@
 
         <nav>
             <div class="links_header">
-                <a href="about_us.html">About Us</a>
-                <a href="search.html">Search</a>
-                <a href="favorites.html">Favorites</a>
+                <a href="about_us.html">Home</a>
+                <a href="search.html">Buscar</a>
+                <a href="favorites.html">Favoritos</a>
             </div>
         </nav>
     </header>
     <main>
 
-    <div>
-        <ul id="favorites"> 
+    <div id="no_results">
+        NO hay ningun resultado
+    </div>
+
+
+    <div id="favorites" class= "films" style="display: none">
         
-        </ul>
     </div>
 
 
@@ -51,20 +57,14 @@
         <p class="text-detail">© 2020 FilmAffinity</p>
     </footer>
 
- <script> 
+ 
+ 
 
-    let favoriteFilms = JSON.parse(localStorage.getItem("favoriteFilms") || []);
-    console.log (favoriteFilms)
-    for (let i=0; i < favoriteFilms.length; i++) {
-        console.log("ENTRA??");
-        document.getElementById("favorites").innerHTML += `<li> ${favoriteFilms[i].name}</li>`
-    }
-
-
+    <script type="text/javascript" src="favorites.js"></script>
 
 
     
-</script>
+
 </body>
 
 </html> 
