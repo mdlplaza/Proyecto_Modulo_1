@@ -5,37 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscar</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="icon" href="images/claqueta.png" type="favicon.ico">
 </head>
 
 <body>
     <header class="header_container">
-        <div class="header_logo">
-            <img src="images/logo_filmaffinity.png" alt="FilmAffinity" class="img_header">
-        </div>
 
-        <nav>
-            <div class="links_header">
+        <nav class="top_nav">
+            <div class="topnav" id="myTopnav">
                 <a href="about_us.html">Home</a>
                 <a href="search.html">Buscar</a>
                 <a href="favorites.html">Favoritos</a>
+                <a href="javascript:void(0);" class="icon" onclick="showVerticalMenu()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
         </nav>
     </header>
+
     <main>
-      
-
         <div class="search">
-            <input type= "text" onkeyup="searchMovies(event)" id="search" placeholder="Buscar una película, pograma de televisión, persona..." />
+            <input type="text" onkeyup="searchMovies(event)" id="search"
+                placeholder="Buscar una película, pograma de televisión, persona..." />
         </div>
-
         <div class="films" id="films">
-        
         </div>
-
     </main>
-
 
     <footer class="footer">
         <aside class="follow-us">
@@ -56,6 +53,8 @@
 
     <script type="text/javascript" src="film_drawer.js"></script>
     <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="menu.js"></script>
+
 </body>
 
 </html>

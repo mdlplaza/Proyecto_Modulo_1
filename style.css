@@ -52,10 +52,16 @@ a {
 
   }
 .search_container {
-    position: absolute;
-    top: 250px;
-    left: 50px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-top: 3%;
+    position: relative;
+    top: 0px;
+    left: 0px;
     color: white;
+    background-image: url("./images/banner_home.jpg");
+    height: 300px;
 }
 
 .search_link {    
@@ -139,7 +145,7 @@ a {
 footer{
     width: 100%;
     height: 81px;
-    position: absolute;
+    /* position: absolute; */
  
 }
 
@@ -151,9 +157,84 @@ footer{
     text-align: center;
 }
 
-@media (max-width: 768px) {
-  
-  
+.no_results{
+  padding: 10px;
+  color: lightgray;
+  margin: 20px;
+}
+
+.main_about_us {
+  width: 100%;
+}
+
+.about_title {
+  height: 100px;
+  margin-top: 3%;
+}
+
+
+/* MENU STYLES */
+.topnav {
+  overflow: hidden;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+      display: none;
+  }
+
+  .topnav a.icon {
+      float: right;
+      display: block;
   }
 }
-  
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+      position: relative;
+  }
+
+  .topnav.responsive.search_container {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      color: white;
+  }
+
+  .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+  }
+
+  .topnav.responsive a {
+      float: none;
+      display: block;
+      z-index: 9999;
+      text-align: left;
+  }
+}
