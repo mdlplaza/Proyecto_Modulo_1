@@ -25,7 +25,7 @@ function searchMovies(event, discover) {
                 filmsContent.innerHTML += `<article class="flip-card">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        ${datos.results[i].backdrop_path ? `<img src="//image.tmdb.org/t/p/w300_and_h450_bestv2/${datos.results[i].backdrop_path}" />` : `<img src="https://plchldr.co/i/300x450?bg=111111&text=no%20image" />`}
+                        ${datos.results[i].backdrop_path ? `<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/${datos.results[i].backdrop_path}" />` : `<img src="https://plchldr.co/i/300x450?bg=111111&text=no%20image" />`}
                     </div>
                     <div class="flip-card-back">
                         <h1>${datos.results[i].title}</h1>
