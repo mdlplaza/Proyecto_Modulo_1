@@ -1,7 +1,6 @@
 
 
 let filmsContent = document.getElementById("films");
-let favoritedFilms = JSON.parse(localStorage.getItem("favoriteFilms")) || [];
 
 searchMovies(null, true);
 
@@ -20,46 +19,11 @@ function searchMovies(event, discover) {
         .then(function (respuesta) {
             return respuesta.json();
         })
-        .then(function (datos) {
-            for (let i = 0; i < datos.results.length; i++) {
-                filmsContent.innerHTML += `<article class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        ${datos.results[i].backdrop_path ? `<img src="https://image.tmdb.org/t/p/w300_and_h450_bestv2/${datos.results[i].backdrop_path}" />` : `<img src="https://plchldr.co/i/300x450?bg=111111&text=no%20image" />`}
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>${datos.results[i].title}</h1>
-                        <p>${datos.results[i].overview}</p>
-                        <p>${datos.results[i].release_date}</p>
-                        <i class="${favoritedFilms.includes(datos.results[i].id) ? "fas" : "far"} fa-star" onclick="favoriteFilms(this, ${datos.results[i].id})"></i>
-                    </div>
-                </div>
-            </article>`;
+        .then(function (peliculas) {
+            for (let i = 0; i < peliculas.results.length; i++) {
+                filmsContent.innerHTML += generateFilmCard(peliculas.results[i]);
             }
         })
 }
-
-function favoriteFilms(element, id) {
-    if (!favoritedFilms.includes(id)) {
-        addItemToFavoriteFilms(id);
-        element.classList.remove("far");
-        element.classList.add("fas");
-    } else {
-        removeItemFromFavoriteFilms(id);
-        element.classList.remove("fas");
-        element.classList.add("far");
-    }
-    localStorage.setItem("favoriteFilms", JSON.stringify(favoritedFilms));
-}
-
-function removeItemFromFavoriteFilms(id) {
-    let index = favoritedFilms.indexOf(id);
-    favoritedFilms.splice(index, 1);
-}
-
-function addItemToFavoriteFilms(id) {
-    favoritedFilms.push(id);
-}
-
 
 

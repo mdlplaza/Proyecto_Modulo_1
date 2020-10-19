@@ -7,6 +7,10 @@ nav {
   width: 100%;
 }
 
+.no_visible {
+  display: none;
+}
+
 .header_container{
     display: flex;
     justify-content: space-between;
